@@ -7,3 +7,5 @@ Segundo avance: Se trabajó en lo que viene siendo las ventanas, primero el acom
 Tercer avance: Se terminó de añadir tablas y botones para la interfaz, además que se fue cambiando el nombre de variable de cada botón, texto y demás.
 
 Cuarto avance: Se continuó con el cambio de nombre de variables, y se hizo la descarga e instalación de XAMPP, pero no se pudo levantar el servidor apache, se tuvo que cambiar el puerto de "Listen 80" a "Listen 8080", además que ahora se tiene que poner "localhost:8080" en lugar de "localhost". También se inicio con las tablas en phpMyAdmin, cada uno con la respectiva tabla que se tenia en NetBeans.
+
+Quinto avance: Ahora se trabajó en hacer la conexión con la base de datos y poder pasar de la ventana de login al punto de venta, pero se tuvo un problema, al parecer la venta de login no está reconociendo los datos de la base de datos, es decir que para entrar se puede colocar cualquier correo y contraseña, así que se trabajará en ello.
