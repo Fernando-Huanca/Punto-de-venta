@@ -13,3 +13,5 @@ Quinto avance: Ahora se trabajó en hacer la conexión con la base de datos y po
 Sexto avance: Se trató de arreglar los errores que existían en cuanto el inicio de sesión, lamentablemente no se pudo arreglarlo, luego de ver videos, tutoriales, etc. No se logró el objetivo, incluso se entró a MariaDB para verificar el funcionamiento del servidor.
 
 Séptimo avance: Se logró solucionar el error del login, ahora se logró obtener una buena conexión entre phpMyAdmin y NetBeans, se trató de un error de código y un poco del phpAdmin por problemas con puertos inicialmente y luego de configuración
+
+Octavo avance: Se hizo la lista de clientes por teclado y esta es enviada a la base de datos, además que se enlistó, no se tuvo mayor problema en realizarlo
