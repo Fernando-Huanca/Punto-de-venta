@@ -23,9 +23,11 @@ public class LoginDAO {
             if(rs.next()){
                 l.setId(rs.getInt("id"));
                 l.setNombre(rs.getString("nombre"));
-                l.setNombre(rs.getString("correo"));
-                l.setNombre(rs.getString("pass"));
+                l.setCorreo(rs.getString("correo"));
+                l.setPass(rs.getString("pass"));
+                System.out.print("RECUPERADO");
             }
+            
                 
                 
         } catch (SQLException e){
