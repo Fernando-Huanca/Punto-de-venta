@@ -25,12 +25,19 @@ public class Login extends javax.swing.JFrame {
         String pass = String.valueOf(txtPass.getPassword());
         if(!"".equals(correo) || !"".equals(pass)){
             lg = login.log(correo, pass);
-            if(lg.getCorreo()==null || lg.getPass()==null){
+            System.out.println(correo);
+            System.out.print(pass);
+            if(lg.getCorreo()!=null && lg.getPass()!=null){
+                //System.out.print(correo);
                 Sistema sis = new Sistema();
                 sis.setVisible(true);
                 dispose();
+                
             } else{
                 JOptionPane.showMessageDialog(null, "Correo o contraseña INCORRECTA!!!");
+                //System.out.println(correo);
+                //System.out.print(pass);
+                
             }
         }
     }
