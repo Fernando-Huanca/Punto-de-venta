@@ -51,6 +51,7 @@ public class ClienteDao {
                 cl.setDni(rs.getInt("dni"));
                 cl.setNombre(rs.getString("nombre"));
                 cl.setTelefono(rs.getInt("telefono"));
+                cl.setDireccion(rs.getString("direccion"));
                 cl.setRazon(rs.getString("razon"));
                 ListaCl.add(cl);
             }
@@ -59,4 +60,25 @@ public class ClienteDao {
         }
         return ListaCl;
     }
+    
+    public boolean EliminarCliente(int id){
+        String sql = "DELETE FROM clientes WHERE id = ?";
+        try{
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.execute();
+            return true;
+        }catch(SQLException e){
+            System.out.println(e.toString());
+            return false;
+        } finally{
+            try{
+                con.close();
+            }catch(SQLException ex){
+                System.out.println(ex.toString());
+            }
+        }
+    }
+    
+    
 }

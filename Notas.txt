@@ -14,4 +14,6 @@ Sexto avance: Se trató de arreglar los errores que existían en cuanto el inici
 
 Séptimo avance: Se logró solucionar el error del login, ahora se logró obtener una buena conexión entre phpMyAdmin y NetBeans, se trató de un error de código y un poco del phpAdmin por problemas con puertos inicialmente y luego de configuración
 
-Octavo avance: Se hizo la lista de clientes por teclado y esta es enviada a la base de datos, además que se enlistó, no se tuvo mayor problema en realizarlo
+Octavo avance: Se hizo la lista de clientes por teclado y esta es enviada a la base de datos, además que se enlistó, no se tuvo mayor problema en realizarlo.
+
+Noveno avance: Ahora se realizó la función de eliminación de un cliente además poder visualizar la información cuando le demos click, y la función de limpiar las celdas cuando eliminemos al cliente.
