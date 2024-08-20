@@ -19,6 +19,7 @@ public class Sistema extends javax.swing.JFrame {
     public Sistema() {
         initComponents();
         this.setLocationRelativeTo(null); 
+        txtIdCliente.setVisible(false);
     }
     
     public void ListarCliente(){
@@ -431,6 +432,11 @@ public class Sistema extends javax.swing.JFrame {
 
         btnEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/actualizar.png"))); // NOI18N
         btnEditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarClienteActionPerformed(evt);
+            }
+        });
 
         btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
         btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -440,6 +446,13 @@ public class Sistema extends javax.swing.JFrame {
         });
 
         btnNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
+        btnNuevoCliente.setMaximumSize(new java.awt.Dimension(31, 32));
+        btnNuevoCliente.setMinimumSize(new java.awt.Dimension(31, 32));
+        btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -485,6 +498,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
@@ -510,10 +524,9 @@ public class Sistema extends javax.swing.JFrame {
                             .addComponent(btnGuardarCliente)
                             .addComponent(btnEditarCliente))
                         .addGap(41, 41, 41)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminarCliente)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnEliminarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnNuevoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(48, 48, 48))
         );
 
@@ -951,6 +964,32 @@ public class Sistema extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
+
+    private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
+        if("".equals(txtIdCliente.getText())){
+            JOptionPane.showMessageDialog(null, "Seleccione una fila");
+        } else{
+            if(!"".equals(txtDniCliente.getText()) || !"".equals(txtNombreCliente.getText()) || !"".equals(txtTelefonoCliente.getText())){
+                cl.setDni(Integer.parseInt(txtDniCliente.getText()));
+                cl.setNombre(txtNombreCliente.getText());
+                cl.setTelefono(Integer.parseInt(txtTelefonoCliente.getText()));
+                cl.setDireccion(txtDireccionCliente.getText());
+                cl.setRazon(txtRazonCliente.getText());
+                cl.setId(Integer.parseInt(txtIdCliente.getText()));
+                client.ModificarCliente(cl);
+                LimpiarTable();
+                LimpiarCliente();
+                ListarCliente();
+            } else {
+                JOptionPane.showMessageDialog(null, "LOS CAMPOS ESTAN VACIOS");
+            }
+        }
+    }//GEN-LAST:event_btnEditarClienteActionPerformed
+
+    private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
+        // TODO add your handling code here:
+        LimpiarCliente();
+    }//GEN-LAST:event_btnNuevoClienteActionPerformed
 
     /**
      * @param args the command line arguments

@@ -17,3 +17,5 @@ Séptimo avance: Se logró solucionar el error del login, ahora se logró obtene
 Octavo avance: Se hizo la lista de clientes por teclado y esta es enviada a la base de datos, además que se enlistó, no se tuvo mayor problema en realizarlo.
 
 Noveno avance: Ahora se realizó la función de eliminación de un cliente además poder visualizar la información cuando le demos click, y la función de limpiar las celdas cuando eliminemos al cliente.
+
+Decimo avance: Se implementó la función para el botón de actualizar, en el cual seleccionamos un cliente y podemos modificar sus datos ya sea el nombre, dni, etc. 
