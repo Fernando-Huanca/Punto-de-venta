@@ -20,4 +20,6 @@ Noveno avance: Ahora se realizó la función de eliminación de un cliente adem�
 
 Decimo avance: Se implementó la función para el botón de actualizar, en el cual seleccionamos un cliente y podemos modificar sus datos ya sea el nombre, dni, etc. 
 
-Decimo-primer avance: Ahora se puede registrar a proveedores y agregarlos a la base de datos
+Decimo primer avance: Ahora se puede registrar a proveedores y agregarlos a la base de datos.
+
+Decimo segundo avance: Se trabajo aún en la sección de proveedores, ahora se pueden enlistar los proveedores, además que se pueden eliminar de la base de datos.
