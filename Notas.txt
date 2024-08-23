@@ -23,3 +23,5 @@ Decimo avance: Se implementó la función para el botón de actualizar, en el cu
 Decimo primer avance: Ahora se puede registrar a proveedores y agregarlos a la base de datos.
 
 Decimo segundo avance: Se trabajo aún en la sección de proveedores, ahora se pueden enlistar los proveedores, además que se pueden eliminar de la base de datos.
+
+Decimo tercer avance: Se implementó el método de actualizar proveedor, para poder modificar datos de proveedores, además de limpiar la tabla para poder añadir un nuevo registro
