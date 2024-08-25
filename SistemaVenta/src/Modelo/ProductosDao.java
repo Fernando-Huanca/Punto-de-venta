@@ -3,11 +3,14 @@ package Modelo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JComboBox;
+import java.sql.ResultSet;
 
 public class ProductosDao {
     Connection con;
     Conexion cn = new Conexion();
     PreparedStatement ps;
+    ResultSet rs;
     
     public boolean RegistrarProductos(Productos pro){
         String sql = "INSERT INTO productos (codigo,nombre,proveedor,stock,precio) VALUES (?,?,?,?,?)";
@@ -27,5 +30,17 @@ public class ProductosDao {
         }
     }
     
-    
+    public void ConsultarProveedor(JComboBox proveedor) {
+        String sql = "SELECT nombre FROM proveedor";
+        try{
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                proveedor.addItem(rs.getString("nombre"));
+            }
+        } catch (SQLException e){
+            System.out.println(e.toString());
+        }
+    }
 }
