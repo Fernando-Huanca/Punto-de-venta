@@ -28,4 +28,6 @@ Decimo tercer avance: Se implementó el método de actualizar proveedor, para po
 
 Decimo cuarto avance: Ahora se puede agregar los productos a la base de datos mediante el ingreso por teclado.
 
-Decimo quinto avance: Ahora le dimos funcionalidad al comboBox, ahora ahí se encuentran todos los proveedores, además que se autocompletan de acuerdo a lo que escribamos
+Decimo quinto avance: Ahora le dimos funcionalidad al comboBox, ahora ahí se encuentran todos los proveedores, además que se autocompletan de acuerdo a lo que escribamos.
+
+Decimo sexto avance: Se implementó la función para poder listar a los productos.
