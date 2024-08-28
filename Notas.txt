@@ -35,3 +35,5 @@ Decimo sexto avance: Se implementó la función para poder listar a los producto
 Decimo séptimo avance: Eliminación de productos y corrección de tabla de productos
 
 Decimo octavo avance: Implementación de botón de editar producto 
+
+Decimo noveno avance: Se generan reportes en Excel de los productos
