@@ -32,4 +32,6 @@ Decimo quinto avance: Ahora le dimos funcionalidad al comboBox, ahora ahí se en
 
 Decimo sexto avance: Se implementó la función para poder listar a los productos.
 
-Decimo séptimo avance: Eliminación de productos y corrección de tabla de productos 
+Decimo séptimo avance: Eliminación de productos y corrección de tabla de productos
+
+Decimo octavo avance: Implementación de botón de editar producto 
