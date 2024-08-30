@@ -12,6 +12,7 @@ import Modelo.Proveedor;
 import Modelo.ProveedorDao;
 import Reportes.Excel;
 import java.util.List;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
@@ -304,6 +305,12 @@ public class Sistema extends javax.swing.JFrame {
         jLabel7.setText("Stock Dispoble");
 
         btnEliminarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+
+        txtCodigoVenta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCodigoVentaKeyPressed(evt);
+            }
+        });
 
         txtPrecioVenta.setEditable(false);
 
@@ -1244,6 +1251,29 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         Excel.reporte();
     }//GEN-LAST:event_btnExcelProActionPerformed
+
+    private void txtCodigoVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoVentaKeyPressed
+       if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+           if(!"".equals(txtCodigoVenta.getText())){
+               String cod = txtCodigoVenta.getText();
+               pro = proDao.BuscarPro(cod);
+               if (pro.getNombre() != null) {
+                   txtDescripcionVenta.setText(""+pro.getNombre());
+                   txtPrecioVenta.setText(""+pro.getPrecio());
+                   txtStockDisponible.setText(""+pro.getStock());
+                   txtCantidadVenta.requestFocus();
+               }else{
+                   txtDescripcionVenta.setText("");
+                   txtPrecioVenta.setText("");
+                   txtStockDisponible.setText("");
+                   txtCodigoVenta.requestFocus(); 
+               }
+           }else{
+               JOptionPane.showMessageDialog(null, "Ingrese el codigo del producto!!!");
+               txtCodigoVenta.requestFocus(); 
+           }
+       }
+    }//GEN-LAST:event_txtCodigoVentaKeyPressed
 
     /**
      * @param args the command line arguments

@@ -37,3 +37,5 @@ Decimo séptimo avance: Eliminación de productos y corrección de tabla de prod
 Decimo octavo avance: Implementación de botón de editar producto 
 
 Decimo noveno avance: Se generan reportes en Excel de los productos
+
+Veinteavo avance: Ahora se puede buscar un producto mediante el código, en la ventana principal, donde sale la información del producto
