@@ -39,3 +39,5 @@ Decimo octavo avance: Implementación de botón de editar producto
 Decimo noveno avance: Se generan reportes en Excel de los productos
 
 Veinteavo avance: Ahora se puede buscar un producto mediante el código, en la ventana principal, donde sale la información del producto
+
+Vigésimo primer avance: Control de cantidad de stock de un producto
