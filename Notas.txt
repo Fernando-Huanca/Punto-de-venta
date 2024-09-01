@@ -41,3 +41,5 @@ Decimo noveno avance: Se generan reportes en Excel de los productos
 Veinteavo avance: Ahora se puede buscar un producto mediante el código, en la ventana principal, donde sale la información del producto
 
 Vigésimo primer avance: Control de cantidad de stock de un producto
+
+Vigésimo segundo avance: Calculo del total a pagar y ajustes en limpieza de datos.
