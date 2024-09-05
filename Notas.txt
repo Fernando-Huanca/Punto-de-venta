@@ -45,3 +45,5 @@ Vigésimo primer avance: Control de cantidad de stock de un producto
 Vigésimo segundo avance: Calculo del total a pagar y ajustes en limpieza de datos.
 
 Vigésimo tercer avance: Eliminación de productos y búsqueda de cliente por dni.
+
+Vigésimo cuarto avance: Registro de nueva venta a la base de datos.
