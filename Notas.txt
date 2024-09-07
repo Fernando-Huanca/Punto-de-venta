@@ -49,3 +49,5 @@ Vigésimo tercer avance: Eliminación de productos y búsqueda de cliente por dn
 Vigésimo cuarto avance: Registro de nueva venta a la base de datos.
 
 Vigésimo quinto avance: Registros de detalles de ventas.
+
+Vigésimo sexto avance: id de venta.
