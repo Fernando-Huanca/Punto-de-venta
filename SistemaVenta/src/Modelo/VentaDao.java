@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VentaDao {
     Connection con;
@@ -85,5 +87,26 @@ public class VentaDao {
             System.out.println(e.toString());
             return false;
         }
+    }
+    
+    public List ListarVentas(){
+        List<Venta> ListaVenta = new ArrayList();
+        String sql = "SELECT * FROM ventas";
+        try{
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Venta vent = new Venta();
+                vent.setId(rs.getInt("id"));
+                vent.setCliente(rs.getString("cliente"));
+                vent.setVendedor(rs.getString("vendedor"));
+                vent.setTotal(rs.getDouble("total"));
+                ListaVenta.add(vent);
+            }
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }
+        return ListaVenta;
     }
 }
