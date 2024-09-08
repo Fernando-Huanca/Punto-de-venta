@@ -190,7 +190,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="290" y="0" width="1070" height="170"/>
+          <AbsoluteConstraints x="290" y="0" width="1070" height="140"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -525,6 +525,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTelefonoCV">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelefonoCVActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtDireccionCV">
             </Component>
@@ -1143,7 +1146,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="txtCodigoPro" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtIdpro" min="-2" pref="5" max="-2" attributes="0"/>
+                              <Component id="txtIdpro" min="-2" pref="0" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="29" max="32767" attributes="0"/>
@@ -1376,6 +1379,9 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtIdpro">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdproActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1614,6 +1620,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRucConfig">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRucConfigActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombreConfig">
             </Component>
@@ -1643,6 +1652,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtIdConfig">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdConfigActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

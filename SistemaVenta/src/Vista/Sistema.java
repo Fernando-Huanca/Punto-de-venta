@@ -54,30 +54,33 @@ public class Sistema extends javax.swing.JFrame {
     ProveedorDao PrDao = new ProveedorDao();
     Productos pro = new Productos();
     ProductosDao proDao = new ProductosDao();
+    Config conf = new Config();
     Venta v = new Venta();
     VentaDao Vdao = new VentaDao();
     DefaultTableModel modelo = new DefaultTableModel();
     DefaultTableModel tmp = new DefaultTableModel();
     Detalle Dv = new Detalle();
-    Config conf = new Config();
     Eventos event = new Eventos();
     int item;
     double Totalpagar = 0.00;
 
     public Sistema() {
         initComponents();
+        txtIdCliente.setVisible(false);
+        txtIdVenta.setVisible(false);
+        txtIdPro.setVisible(false);
+        txtIdProveedor.setVisible(false);
+        txtTelefonoCV.setVisible(false);
+        //txtIdConfig.setVisible(false);
+        txtDireccionCV.setVisible(false);
+        txtRazonCV.setVisible(false);
     }
     
     public Sistema(login priv){
         initComponents();
         this.setLocationRelativeTo(null);     
-        txtIdCliente.setVisible(false);
-        txtIdVenta.setVisible(false);
-        txtIdPro.setVisible(false);
-        txtIdProveedor.setVisible(false);
         AutoCompleteDecorator.decorate(cbxProveedorPro);
-        proDao.ConsultarProveedor(cbxProveedorPro);
-        txtIdConfig.setVisible(false);
+        proDao.ConsultarProveedor(cbxProveedorPro); 
         ListarConfig();
         if (priv.getRol().equals("Asistente")) {
             btnProductos.setEnabled(false);
@@ -406,7 +409,7 @@ public class Sistema extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 770));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/encabezado.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1070, 170));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1070, 140));
 
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -495,6 +498,12 @@ public class Sistema extends javax.swing.JFrame {
         jLabel10.setText("Total a Pagar");
 
         LabelTotal.setText("------");
+
+        txtTelefonoCV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoCVActionPerformed(evt);
+            }
+        });
 
         btnGraficar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/torta.png"))); // NOI18N
         btnGraficar.addActionListener(new java.awt.event.ActionListener() {
@@ -1004,6 +1013,12 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        txtIdpro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdproActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -1035,7 +1050,7 @@ public class Sistema extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(txtCodigoPro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtIdpro, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtIdpro, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1153,6 +1168,12 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabel31.setText("RAZÓN SOCIAL");
 
+        txtRucConfig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRucConfigActionPerformed(evt);
+            }
+        });
+
         btnActualizarConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/actualizar.png"))); // NOI18N
         btnActualizarConfig.setText("ACTUALIZAR");
         btnActualizarConfig.addActionListener(new java.awt.event.ActionListener() {
@@ -1163,6 +1184,12 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel32.setText("DATOS DE LA EMPRESA");
+
+        txtIdConfig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdConfigActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1612,11 +1639,17 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (!"".equals(txtRucConfig.getText()) || !"".equals(txtNombreConfig.getText()) || !"".equals(txtTelefonoConfig.getText()) || !"".equals(txtDireccionConfig.getText()) || !"".equals(txtRazonConfig.getText())) {
                 conf.setRuc(Integer.parseInt(txtRucConfig.getText()));
+                JOptionPane.showMessageDialog(null, txtRucConfig);
                 conf.setNombre(txtNombreConfig.getText());
+                JOptionPane.showMessageDialog(null, txtNombreConfig);
                 conf.setTelefono(Integer.parseInt(txtTelefonoConfig.getText()));
+                JOptionPane.showMessageDialog(null, txtTelefonoConfig);
                 conf.setDireccion(txtDireccionConfig.getText());
+                JOptionPane.showMessageDialog(null, txtDireccionConfig);
                 conf.setRazon(txtRazonConfig.getText());
-                conf.setId(Integer.parseInt(txtIdCliente.getText()));
+                JOptionPane.showMessageDialog(null, txtRazonConfig);
+                conf.setId(Integer.parseInt(txtIdConfig.getText()));
+                JOptionPane.showMessageDialog(null, txtIdConfig);
                 proDao.ModificarDatos(conf);
                 JOptionPane.showMessageDialog(null, "Datos de la empresa modificado");
                 ListarConfig();
@@ -1669,6 +1702,23 @@ public class Sistema extends javax.swing.JFrame {
         reg.setVisible(true);
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtTelefonoCVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoCVActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtTelefonoCVActionPerformed
+
+    private void txtIdproActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdproActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdproActionPerformed
+
+    private void txtIdConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdConfigActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdConfigActionPerformed
+
+    private void txtRucConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRucConfigActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRucConfigActionPerformed
 
     /**
      * @param args the command line arguments
