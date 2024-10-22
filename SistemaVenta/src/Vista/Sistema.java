@@ -71,7 +71,7 @@ public class Sistema extends javax.swing.JFrame {
         txtIdPro.setVisible(false);
         txtIdProveedor.setVisible(false);
         txtTelefonoCV.setVisible(false);
-        //txtIdConfig.setVisible(false);
+        txtIdConfig.setVisible(false);
         txtDireccionCV.setVisible(false);
         txtRazonCV.setVisible(false);
     }
@@ -142,7 +142,7 @@ public class Sistema extends javax.swing.JFrame {
      public void ListarVentas() {
         List<Venta> ListarVenta = Vdao.ListarVentas();
         modelo = (DefaultTableModel) TableVentas.getModel();
-        Object[] ob = new Object[6];
+        Object[] ob = new Object[4];
         for (int i = 0; i < ListarVenta.size(); i++) {
             ob[0] = ListarVenta.get(i).getId();
             ob[1] = ListarVenta.get(i).getCliente();
@@ -409,7 +409,7 @@ public class Sistema extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 770));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/encabezado.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1070, 140));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1070, 170));
 
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -1639,17 +1639,11 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (!"".equals(txtRucConfig.getText()) || !"".equals(txtNombreConfig.getText()) || !"".equals(txtTelefonoConfig.getText()) || !"".equals(txtDireccionConfig.getText()) || !"".equals(txtRazonConfig.getText())) {
                 conf.setRuc(Integer.parseInt(txtRucConfig.getText()));
-                JOptionPane.showMessageDialog(null, txtRucConfig);
                 conf.setNombre(txtNombreConfig.getText());
-                JOptionPane.showMessageDialog(null, txtNombreConfig);
                 conf.setTelefono(Integer.parseInt(txtTelefonoConfig.getText()));
-                JOptionPane.showMessageDialog(null, txtTelefonoConfig);
                 conf.setDireccion(txtDireccionConfig.getText());
-                JOptionPane.showMessageDialog(null, txtDireccionConfig);
                 conf.setRazon(txtRazonConfig.getText());
-                JOptionPane.showMessageDialog(null, txtRazonConfig);
                 conf.setId(Integer.parseInt(txtIdConfig.getText()));
-                JOptionPane.showMessageDialog(null, txtIdConfig);
                 proDao.ModificarDatos(conf);
                 JOptionPane.showMessageDialog(null, "Datos de la empresa modificado");
                 ListarConfig();
@@ -1985,7 +1979,7 @@ public class Sistema extends javax.swing.JFrame {
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLUE);
             fecha.add(Chunk.NEWLINE);
             Date date = new Date();
-            fecha.add("Factura: " + id + "\n" + "Fecha: " + new SimpleDateFormat("dd-mm-yyyy").format(date) + "\n\n");
+            fecha.add("Factura: " + id + "\n" + "Fecha: " + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\n\n");
 
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);
@@ -2002,11 +1996,11 @@ public class Sistema extends javax.swing.JFrame {
             String dir = txtDireccionConfig.getText();
             String ra = txtRazonConfig.getText();
 
-            /*String ruc = "242";
-            String nom = "sssss";
-            String tel = "24242";
-            String dir = "asdasfd";
-            String ra = "aaa";*/
+            /*ruc = "242";
+            nom = "sssss";
+            tel = "24242";
+            dir = "asdasfd";
+            ra = "aaa";*/
             Encabezado.addCell("");
             Encabezado.addCell("NIT: " + ruc + "\nNombre: " + nom + "\nTelefono: " + tel + "\nDirección: " + dir + "\nRazón: " + ra);
             Encabezado.addCell(fecha);
